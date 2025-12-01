@@ -1,9 +1,4 @@
-import sys
-dial = 50
-password = 0
-for line in sys.stdin:
-    s = (line[0] == "L")
-    dial = (dial + int(line[1:]) * (-1)**s) % 100
-    if not dial:
-        password += 1
-print(password)
+d,p=50,0
+for l in open('i'):
+ p+=not(d:=((d+int(l[1:])*(-1)**('L'in l))%100))
+print(p)
