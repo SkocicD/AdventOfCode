@@ -1,32 +1,27 @@
-s={}
+s=[[]for _ in range(999)]
 g={}
 q=[]
 for l in open(0):
- k=l.strip().split()
- if 'v'in k[0]:
-  v,b=map(int,[k[1],k[-1]])
-  if b in s:
-   s[b].append(v)
+ z=l.split()
+ k=[int(x)for x in z if x[0]<'a']
+ if len(k)<3:
+  v,b=k
+  if len(s[b]):
    q.append(b)
-  else:
-   s[b]=[v]
+  s[b].append(v)
  else:
-  f=int(k[1])
-  h='h'in k[3]
-  a=('b'in k[5],int(k[6]))
-  b=('b'in k[-2],int(k[11]))
-  g[f]=[b,a]if h else[a,b]
+  a=('b'in z[5],k[1])
+  b=('b'in z[-2],k[2])
+  g[k[0]]=[b,a]if 'h'in z[3] else[a,b]
 p=1
 while q:
  w=q.pop()
  if sorted(s[w])==[17,61]:print(w)
  for(a,b),x in zip(g[w],sorted(s[w])):
   if a:
-   if b in s:
-    s[b].append(x)
+   if len(s[b]):
     q.append(b)
-   else:
-    s[b]=[x]
+   s[b].append(x)
   elif b in[0,1,2]:
    p*=x
 print(p)
