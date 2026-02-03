@@ -22,6 +22,6 @@ while q:
    if len(s[b]):
     q.append(b)
    s[b].append(x)
-  elif b in[0,1,2]:
+  elif b<3:
    p*=x
 print(p)
