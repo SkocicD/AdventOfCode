@@ -16,8 +16,8 @@ for l in open(0):
 p=1
 while q:
  w=q.pop()
- if sorted(s[w])==[17,61]:print(w)
- for(a,b),x in zip(g[w],sorted(s[w])):
+ if (z:=sorted(s[w]))==[17,61]:print(w)
+ for(a,b),x in zip(g[w],z):
   if a:
    if len(s[b]):
     q.append(b)
