@@ -1,4 +1,5 @@
 s=[[]for _ in range(999)]
+o=list.append
 g={}
 q=[]
 for l in open(0):
@@ -7,8 +8,8 @@ for l in open(0):
  if len(k)<3:
   v,b=k
   if len(s[b]):
-   q.append(b)
-  s[b].append(v)
+   o(q,b)
+  o(s[b],v)
  else:
   a=('b'in z[5],k[1])
   b=('b'in z[-2],k[2])
@@ -16,12 +17,12 @@ for l in open(0):
 p=1
 while q:
  w=q.pop()
- if (z:=sorted(s[w]))==[17,61]:print(w)
+ if [17,61]==(z:=sorted(s[w])):print(w)
  for(a,b),x in zip(g[w],z):
   if a:
    if len(s[b]):
-    q.append(b)
-   s[b].append(x)
+    o(q,b)
+   o(s[b],x)
   elif b<3:
    p*=x
 print(p)
